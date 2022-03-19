@@ -12,20 +12,17 @@ db = SQLAlchemy(app)
 drop_table = 'DROP TABLE IF EXISTS users;'
 users_table = """ 
 CREATE TABLE users(
-username VARCHAR NOT NULL PRIMARY KEY,s
+username VARCHAR NOT NULL PRIMARY KEY,
 email VARCHAR);
 """
 data = """
 INSERT INTO users
 VALUES
-    ("Hasan", "hasan@philips.com"),
-    ("Levent", "levent@amazon.com"),
-    ("Beyza", "beyza@google.com"),
-    ("Oguzhan", "oguzhan@bmw.com"),
-    ("Cemile", "cemile@mercedes.com"),
-    ("Halil", "halil@porche.com"),
-    ("Melek", "melek@tesla.com"),
-    ("Yakup", "yakup@samsung.com");
+	("Tuba", "tuba@amazon.com" ),
+	("Ethan", "ethan@micrasoft.com"),
+	("mostafa", "mostafa@facebook.com"),
+    ("sait", "sait@tesla.com"),
+    ("busra","busra@google");
 """
 
 
@@ -99,4 +96,4 @@ def add_email():
 
 # - Add a statement to run the Flask application which can be reached from any host on port 80.
 if __name__=='__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug=True)
