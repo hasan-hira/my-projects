@@ -18,17 +18,18 @@ Resources:
       KeyName: !Ref KeyName
       SecurityGroups:
         - !Ref mysecgroup
-      UserData: !Base64 |
+      UserData: 
+        !Base64 |
           #!/bin/bash
           yum update -y 
           yum install python3 -y
           pip3 install flask
           cd /home/ec2-user
-          wget https://raw.githubusercontent.com/MelekAlan/my-projects/main/aws/Project-001-Roman-Numerals-Converter/app.py
+          wget https://raw.githubusercontent.com/hasan-hira/my-projects/main/aws/Project-001-Roman-Numerals-Converter/app.py
           mkdir templates
           cd templates
-          wget https://raw.githubusercontent.com/MelekAlan/my-projects/main/aws/Project-001-Roman-Numerals-Converter/templates/index.html
-          wget https://raw.githubusercontent.com/MelekAlan/my-projects/main/aws/Project-001-Roman-Numerals-Converter/templates/result.html
+          wget https://raw.githubusercontent.com/hasan-hira/my-projects/main/aws/Project-001-Roman-Numerals-Converter/templates/index.html
+          wget https://raw.githubusercontent.com/hasan-hira/my-projects/main/aws/Project-001-Roman-Numerals-Converter/templates/result.html
           cd ..
           python3 app.py
 
@@ -55,4 +56,3 @@ Outputs:
       - http://${PublicAddress}
       - PublicAddress: !GetAtt myec2.PublicDnsName
     Description: Roman Numerals Converter Application URL
-
