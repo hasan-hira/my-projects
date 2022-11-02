@@ -34,7 +34,7 @@ Resources:
       AutoMinorVersionUpgrade: true
       BackupRetentionPeriod: 0
       DBInstanceClass: db.t2.micro # Required
-      DBInstanceIdentifier: clarusway_phonebook
+      DBInstanceIdentifier: hasanhira-db
       DBName: clarusway_phonebook
       DBSecurityGroups:
         - !Ref MyDBSecurityGroup
