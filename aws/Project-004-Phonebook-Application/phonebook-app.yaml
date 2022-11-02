@@ -34,13 +34,13 @@ Resources:
       AutoMinorVersionUpgrade: true
       BackupRetentionPeriod: 0
       DBInstanceClass: db.t2.micro # Required
-      DBInstanceIdentifier: melek-db
+      DBInstanceIdentifier: hasan-db
       DBName: clarusway_phonebook
       DBSecurityGroups:
         - !Ref MyDBSecurityGroup
       Engine: mySQL
-      EngineVersion: 8.0.19
-      MasterUserPassword: Serdar_1
+      EngineVersion: 8.0.28
+      MasterUserPassword: Hasanhira_1
       MasterUsername: admin
       Port: 3306
       PubliclyAccessible: true
@@ -103,7 +103,7 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData:
-        ImageId: ami-033b95fb8079dc481
+        ImageId: ami-09d3b3274b6c5d4aa
         InstanceType: t2.micro
         KeyName: !Ref KeyName
         SecurityGroupIds:
@@ -123,8 +123,8 @@ Resources:
                 pip3 install flask
                 pip3 install flask_mysql
                 echo "${MyDBURI}" > /home/ec2-user/dbserver.endpoint
-                TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-                FOLDER="https://$TOKEN@raw.githubusercontent.com/MelekAlan/private-my-projects/main/Project-004-Phonebook-Application/"
+                TOKEN="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"
+                FOLDER="https://$TOKEN@raw.githubusercontent.com/hasan-hira/my-projects/main/aws/Project-004-Phonebook-Application/"
                 curl -s --create-dirs -o "/home/ec2-user/templates/index.html" -L "$FOLDER"templates/index.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/add-update.html" -L "$FOLDER"templates/add-update.html
                 curl -s --create-dirs -o "/home/ec2-user/templates/delete.html" -L "$FOLDER"templates/delete.html
